@@ -1,5 +1,22 @@
-# cmake .
-# make VERBOSE=1
+## This make file is hard-coded to work on Debian 10 with the following
+## packages:
+##  apt-get install libocct-data-exchange-dev libocct-draw-dev libocct-foundation-dev \
+##                libocct-modeling-algorithms-dev libocct-modeling-data-dev \
+##                libocct-ocaf-dev libocct-visualization-dev \
+##                libtbb-dev
+##
+## Other systems will likely need adjustments.
+##
+## An easy(?) way to see how to build with OpenCASCADE on your system
+## is to follow the installation examples of:
+##      https://github.com/miho/OCC-CSG/
+##
+## After building it, run:
+##     cmake .
+##     make VERBOSE=1
+## And you'll see the exact G++ command-line that was used.
+##
+##
 
 CPPFLAGS=-I/usr/include/opencascade
 CXXFLAGS=-std=c++11 -g -O0
