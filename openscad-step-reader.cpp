@@ -23,7 +23,7 @@
 #include "triangle.h"
 #include "tessellation.h"
 #include "openscad-triangle-writer.h"
-
+#include "explore-shape.h"
 
 static struct option options[] = {
 	{"help",      no_argument, 0, 'h' },
@@ -38,7 +38,7 @@ static struct option options[] = {
 
 void show_help()
 {
-	
+
 	std::cout << "openscad-step-reader\n"
 "\n"
 "A proof-of-concept program for STEP/OpenSCAD integration\n"
@@ -196,6 +196,7 @@ int main(int argc, char *argv[])
 		break;
 
 	case OUT_EXPLORE:
+		explore_shape (shape);
 		break;
 	}
 
