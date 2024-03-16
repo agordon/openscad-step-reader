@@ -33,10 +33,7 @@ LDFLAGS=-lTKSTL -lTKXDESTEP -lTKBinXCAF -lTKXmlXCAF -lTKXDEIGES -lTKXCAF \
  -lTKOpenGl -lTKV3d -lTKService -lTKXMesh -lTKMesh -lTKOffset \
  -lTKFeat -lTKFillet -lTKHLR -lTKBool -lTKBO -lTKShHealing \
  -lTKPrim -lTKTopAlgo -lTKGeomAlgo -lTKBRep -lTKGeomBase \
- -lTKG3d -lTKG2d \
- \
- /usr/lib/x86_64-linux-gnu/libTKMath.so.7.3.0 \
- /usr/lib/x86_64-linux-gnu/libTKernel.so.7.3.0 \
+ -lTKG3d -lTKG2d -lTKMath -lTKernel\
  \
  -lfreetype -lpthread -lrt -lstdc++ -ldl -lm\
 

@@ -26,10 +26,10 @@ using namespace std;
    (with invalud 'normals' value - but these are ignored anyhow in OpenSCAD */
 void write_triangles_ascii_stl(const Face_vector& faces)
 {
-	cout << "solid" << endl;
+	cout << "solid" << std::endl;
 	for (auto &f : faces)
 		f.write_ascii_stl(cout);
-	cout << "endsolid" << endl;
+	cout << "endsolid" << std::endl;
 }
 
 /* Write the faces/triangles as two vectors (one "POINTS", one "FACES")
@@ -50,11 +50,11 @@ void write_triangle_scad(const Face_vector& faces)
 	all.write_face_vector(cout);
 
 	// Call Polyhedron
-	cout << "module solid_object() {" << endl;
-	cout << "  polyhedron (points,faces);"<< endl;
-	cout << "}" << endl;
-	cout << endl;
-	cout << "solid_object();" << endl;
+	cout << "module solid_object() {" << std::endl;
+	cout << "  polyhedron (points,faces);"<< std::endl;
+	cout << "}" << std::endl;
+	cout << std::endl;
+	cout << "solid_object();" << std::endl;
 }
 
 
@@ -99,32 +99,32 @@ void write_faces_scad (const Face_vector& faces)
 	}
 
 	/* crazy colors version, draw each face by itself */
-	cout << "module crazy_colors() {" << endl;
+	cout << "module crazy_colors() {" << std::endl;
 	for (i=1;i<=faces.size();++i) {
 		const char* color = colors[i%NUM_COLORS] ;
-		cout << "color(\"" << color << "\")" << endl;
+		cout << "color(\"" << color << "\")" << std::endl;
 		cout << "polyhedron(face_" << i <<"_points, face_" << i << "_faces);" << endl ;
 	}
-	cout << "}" << endl;
+	cout << "}" << std::endl;
 
-	cout << "function add_offset(vec,ofs) = [for (x=vec) x + [ofs,ofs,ofs]];" << endl;
-	cout << "module solid_object() {" << endl;
-	cout << "  tmp1_points = face_1_points;" << endl;
-	cout << "  tmp1_faces =  face_1_faces;" << endl;
-	cout << endl;
+	cout << "function add_offset(vec,ofs) = [for (x=vec) x + [ofs,ofs,ofs]];" << std::endl;
+	cout << "module solid_object() {" << std::endl;
+	cout << "  tmp1_points = face_1_points;" << std::endl;
+	cout << "  tmp1_faces =  face_1_faces;" << std::endl;
+	cout << std::endl;
 	for (i=2;i<=faces.size();++i) {
-		cout << "  tmp"<<i<<"_points = concat(tmp"<<(i-1)<<"_points, face_"<<i<<"_points);" << endl;
-		cout << "  tmp"<<i<<"_faces =  concat(tmp"<<(i-1)<<"_faces,add_offset(face_"<<i<<"_faces,len(tmp"<<(i-1)<<"_points)));" << endl;
-		cout << endl;
+		cout << "  tmp"<<i<<"_points = concat(tmp"<<(i-1)<<"_points, face_"<<i<<"_points);" << std::endl;
+		cout << "  tmp"<<i<<"_faces =  concat(tmp"<<(i-1)<<"_faces,add_offset(face_"<<i<<"_faces,len(tmp"<<(i-1)<<"_points)));" << std::endl;
+		cout << std::endl;
 	}
-	cout << "  polyhedron (tmp"<<(faces.size())<<"_points, tmp"<<(faces.size())<<"_faces);"<< endl;
-	cout << "}" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "  polyhedron (tmp"<<(faces.size())<<"_points, tmp"<<(faces.size())<<"_faces);"<< std::endl;
+	cout << "}" << std::endl;
+	cout << std::endl;
+	cout << std::endl;
 
-	cout << "if ($preview) {;" << endl;
-	cout << "  crazy_colors();" << endl;
-	cout << "} else {" << endl;
-	cout << "  solid_object();" << endl;
-	cout << "}" << endl;
+	cout << "if ($preview) {;" << std::endl;
+	cout << "  crazy_colors();" << std::endl;
+	cout << "} else {" << std::endl;
+	cout << "  solid_object();" << std::endl;
+	cout << "}" << std::endl;
 }

@@ -33,6 +33,8 @@
 #include <TColgp_HArray1OfPnt.hxx>
 #include <BRepTools_WireExplorer.hxx>
 #include <math.hxx>
+#include <GeomAbs_SurfaceType.hxx>
+#include <BRepAdaptor_Surface.hxx>
 
 
 /* good resources:
