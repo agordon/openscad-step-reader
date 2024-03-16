@@ -30,7 +30,7 @@ public:
 		}
 
 };
-static ostream & operator << (ostream &out, const Point &p)
+static std::ostream & operator << (std::ostream &out, const Point &p)
 {
 	out << "[" << p.x() << "," << p.y() << "," << p.z() << "]";
 	return out;
@@ -52,15 +52,15 @@ public:
 		{
 			ostrm << "    " ;
 			_p1.write_ascii_stl(ostrm);
-			ostrm << endl;
+			ostrm << std::endl;
 
 			ostrm << "    " ;
 			_p2.write_ascii_stl(ostrm);
-			ostrm << endl;
+			ostrm << std::endl;
 
 			ostrm << "    " ;
 			_p3.write_ascii_stl(ostrm);
-			ostrm << endl;
+			ostrm << std::endl;
 		}
 
 };

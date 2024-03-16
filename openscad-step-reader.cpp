@@ -82,7 +82,7 @@ void show_help()
 
 void show_version()
 {
-	std::cout << 42 << endl;
+	std::cout << 42 << std::endl;
 	exit(0);
 }
 
